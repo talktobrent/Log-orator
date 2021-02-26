@@ -18,11 +18,13 @@ class Log(object):
     @classmethod
     def add(cls, app_name=None, identifier=None, public=False, format_string=None, level=logging.DEBUG):
         """
-        Sets logging location and initiates developer log, use in project root to automatically use project name
-        as logging name
 
-        @param location: path
-        @type location: string
+        :param app_name: Name of application you intend to log
+        :param identifier: unique name of logger
+        :param public: Will this log be a "public" log? (something catered to user view)
+        :param format_string: logging format string
+        :param level: the default level of the logger
+        :return: logging object
         """
         if not app_name and not cls.app_name:
             # https://stackoverflow.com/a/59737458
